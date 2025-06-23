@@ -10,13 +10,13 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  server: {
-    host: "0.0.0.0",
-    proxy: {
-      "/api": {
-        target: import.meta.env.VITE_API,
-        changeOrigin: true,
-      },
-    },
-  },
+  // server: {
+  //   host: "0.0.0.0",
+  //   proxy: {
+  //     "/api": {
+  //       target: import.meta.env.VITE_API,
+  //       changeOrigin: true,
+  //     },
+  //   },
+  // },
 });

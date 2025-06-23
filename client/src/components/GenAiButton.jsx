@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Button } from "./ui/button";
 import axios from "axios";
 import { TodoContext } from "@/Context/TodoContext";
+import api from "@/lib/axiosConfig";
 
 export const GenAiButton = () => {
   const { getValues, setValue } = useContext(TodoContext);
@@ -10,7 +11,7 @@ export const GenAiButton = () => {
       console.log("title can not be empty");
       return;
     }
-    const response = await axios.post("/api/ai/getDescription", {
+    const response = await api.post("/api/ai/getDescription", {
       title: getValues("title"),
     });
     console.log(response.data.description);

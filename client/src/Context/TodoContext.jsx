@@ -1,5 +1,4 @@
 import { SignIn, useAuth } from "@clerk/clerk-react";
-import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import { Button } from "../components/ui/button";
 export const TodoContext = createContext(null);
@@ -8,6 +7,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router";
 import { format } from "date-fns";
 import { useForm } from "react-hook-form";
+import api from "@/lib/axiosConfig";
 
 export default function TodoContextProvider({ children }) {
   const [todoList, setTodoList] = useState([]);
@@ -93,7 +93,7 @@ export default function TodoContextProvider({ children }) {
       setTodoList((prev) => [...prev, newTodo]);
     } else {
       try {
-        const response = await axios.post("/api/todos/createTodo", {
+        const response = await api.post("/api/todos/createTodo", {
           ...data,
           clerkUserId: userId,
           dueDate: data.dueDate ? format(data.dueDate, "yyyy-MM-dd") : null,
@@ -118,7 +118,7 @@ export default function TodoContextProvider({ children }) {
     if (!userId) return;
     try {
       setLoading(true);
-      const response = await axios.get(`/api/todos/${userId}`);
+      const response = await api.get(`/api/todos/${userId}`);
 
       if (response.data) {
         setTodoList(response.data);

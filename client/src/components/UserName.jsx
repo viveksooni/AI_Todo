@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useAuth, RedirectToSignIn } from "@clerk/clerk-react";
 import { useFormAction, useNavigate } from "react-router";
