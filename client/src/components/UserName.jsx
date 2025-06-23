@@ -4,7 +4,6 @@ import { useFormAction, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 
-
 let renderCount = 0;
 function UserName() {
   const form = useForm();
@@ -82,7 +81,8 @@ function UserName() {
           Submit
         </button>
       </form>
-      <DevTool control={control}></DevTool>
+      if()
+      {import.meta.env.Dev && <DevTool control={control}></DevTool>}{" "}
     </div>
   );
 }
