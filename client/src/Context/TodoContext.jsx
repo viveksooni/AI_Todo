@@ -93,7 +93,7 @@ export default function TodoContextProvider({ children }) {
       setTodoList((prev) => [...prev, newTodo]);
     } else {
       try {
-        const response = await api.post("/api/todos/createTodo", {
+        const response = await api.post("/todos/createTodo", {
           ...data,
           clerkUserId: userId,
           dueDate: data.dueDate ? format(data.dueDate, "yyyy-MM-dd") : null,

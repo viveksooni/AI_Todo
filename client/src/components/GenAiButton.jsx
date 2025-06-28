@@ -11,7 +11,7 @@ export const GenAiButton = () => {
       console.log("title can not be empty");
       return;
     }
-    const response = await api.post("/api/ai/getDescription", {
+    const response = await api.post("/ai/getDescription", {
       title: getValues("title"),
     });
     console.log(response.data.description);

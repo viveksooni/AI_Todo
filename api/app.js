@@ -36,6 +36,6 @@ app.listen(Port, () => {
   console.log(`Server running at ${Port}`);
 });
 
-router.use("/api/todos", TodoRouter);
-router.use("/api/ai",AiRouter)
+router.use("/todos", TodoRouter);
+router.use("/ai",AiRouter)
 app.use(router);
