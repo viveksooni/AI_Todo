@@ -118,7 +118,7 @@ export default function TodoContextProvider({ children }) {
     if (!userId) return;
     try {
       setLoading(true);
-      const response = await api.get(`/api/todos/${userId}`);
+      const response = await api.get(`/todos/${userId}`);
 
       if (response.data) {
         setTodoList(response.data);
@@ -141,7 +141,7 @@ export default function TodoContextProvider({ children }) {
     }
 
     try {
-      const deleteTodo = await axios.delete(`/api/todos/${id}`);
+      const deleteTodo = await api.delete(`todos/${id}`);
 
       if (deleteTodo.statusText !== "OK") {
         toast.error("Not able to delete Todo");
@@ -163,7 +163,7 @@ export default function TodoContextProvider({ children }) {
     }
 
     try {
-      const updated = await axios.put("/api/todos/markComplete", {
+      const updated = await api.put("/todos/markComplete", {
         todoId: id,
       });
 

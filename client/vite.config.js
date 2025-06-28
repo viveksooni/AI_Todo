@@ -10,7 +10,14 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+
   server: {
-    host: "0.0.0.0",
+    proxy: {
+      "/api": {
+        target: "http://aitodo-env.eba-tg2qg2mz.us-east-1.elasticbeanstalk.com",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, "/api"),
+      },
+    },
   },
 });
