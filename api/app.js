@@ -14,7 +14,13 @@ const app = express();
 
 app.use(clerkMiddleware());
 dotenv.config();
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:3000', // for local development
+    'https://ai-todo-pi.vercel.app  ' // your Vercel domain
+  ],
+  credentials: true
+}));
 app.use(express.json());
 const Port = process.env.PORT || 5000;
 const router = express.Router();
