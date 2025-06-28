@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "http://aitodo-env.eba-tg2qg2mz.us-east-1.elasticbeanstalk.com/api/$1"
+    }
+  ]
+}
