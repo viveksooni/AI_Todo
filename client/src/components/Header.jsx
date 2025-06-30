@@ -27,7 +27,7 @@ export const Header = () => {
           }}
         >
           {" "}
-          priority Low to Highhhh
+          priority Low to High
         </div>
         <div
           className={`text-xs bg-gray-200 px-2 py-2 rounded-full cursor-pointer text-gray-500 ${

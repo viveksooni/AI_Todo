@@ -81,8 +81,8 @@ function UserName() {
           Submit
         </button>
       </form>
- {console.log(import.meta.env.Dev)} 
-      {import.meta.env.Dev && <DevTool control={control}></DevTool>}{" "}
+ 
+      {   <DevTool control={control}></DevTool>} 
     </div>
   );
 }
